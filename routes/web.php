@@ -60,8 +60,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add'); // Añadir producto al carrito
     Route::put('/cart/update/{cartItem}', [CartController::class, 'update'])->name('cart.update'); // Actualizar cantidad en el carrito
     Route::post('/cart/remove/{product}', [CartController::class, 'remove'])->name('cart.remove'); // Eliminar producto del carrito
-    Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout'); // Página de pago
-    Route::get('/order/receipt/{order}', [CartController::class, 'showReceipt'])->name('order.receipt');
+    Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout'); // Proceder al pago
+    Route::get('/order/invoice/{orderId}', [CartController::class, 'invoice'])->name('order.invoice'); // Mostrar la factura/comprobante});
+
 });
     
 
